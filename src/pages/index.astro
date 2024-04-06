@@ -1,41 +1,34 @@
 ---
-import Card from "@components/Card";
-import Footer from "@components/Footer.astro";
-import Header from "@components/Header.astro";
-import Hr from "@components/Hr.astro";
-import LinkButton from "@components/LinkButton.astro";
-import Socials from "@components/Socials.astro";
-import { SOCIALS } from "@config";
-import Layout from "@layouts/Layout.astro";
-import getSortedPosts from "@utils/getSortedPosts";
-import { getCollection } from "astro:content";
+import Card from '@/components/Card'
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import Hr from '@/components/Hr.astro'
+import LinkButton from '@/components/LinkButton.astro'
+import Layout from '@/layouts/Layout.astro'
+import getSortedPosts from '@/utils/getSortedPosts'
+import { getCollection } from 'astro:content'
 
-const posts = await getCollection("blog");
+const posts = await getCollection('blog')
 
-const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
-
-const socialCount = SOCIALS.filter(social => social.active).length;
+const sortedPosts = getSortedPosts(posts)
+const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
+const recentPosts = sortedPosts.filter(({ data }) => !data.featured)
 ---
 
 <Layout>
   <Header />
-  <main id="main-content">
-    <section id="hero">
+  <main id='main-content'>
+    <section id='hero'>
       <h1>👏 欢迎</h1>
       <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
+        我是 <strong>XiaoChai</strong>，一个前端开发者，喜欢分享技术和生活。
       </p>
     </section>
     <Hr />
     {
       featuredPosts.length > 0 && (
         <>
-          <section id="featured">
+          <section id='featured'>
             <h2>Featured</h2>
             <ul>
               {featuredPosts.map(({ data, slug }) => (
@@ -54,7 +47,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 
     {
       recentPosts.length > 0 && (
-        <section id="recent-posts">
+        <section id='recent-posts'>
           <h2>Recent Posts</h2>
           <ul>
             {recentPosts.map(
@@ -72,12 +65,12 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       )
     }
 
-    <div class="all-posts-btn-wrapper">
-      <LinkButton href="/posts/">
+    <div class='all-posts-btn-wrapper'>
+      <LinkButton href='/posts/'>
         All Posts
-        <svg xmlns="http://www.w3.org/2000/svg"
+        <svg xmlns='http://www.w3.org/2000/svg'
           ><path
-            d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+            d='m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z'
           ></path>
         </svg>
       </LinkButton>
