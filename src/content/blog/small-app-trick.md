@@ -20,4 +20,4 @@ eg: 八爷的Opencat App可以这样打开
 ~/Applications/OpenCat.app/Contents/MacOS/OpenCat -_NS_4445425547 YES
 ```
 
-![](https://cdn.jsdelivr.net/gh/CarberryChai/oss@master/uPic/snapshot_opencat.png)
+![](/assets/snapshot_opencat.png)
