@@ -13,7 +13,7 @@ description: 记录一下我本人部署hysteria2过程，以备将来之用。
 
 ## 什么是Hysteria2
 
-Hysteria 是一个强大、快速、抗审查的代理工具。以显著提成网络连接速度而闻名，做到油管4K视频秒开。[hysteria官网](https://v2.hysteria.network/zh/)
+Hysteria 是一个强大、快速、抗审查的代理工具。以显著提成网络连接速度而闻名，可以做到油管4K视频秒开。[hysteria官网](https://v2.hysteria.network/zh/)
 
 ## 前期准备
 
@@ -110,7 +110,7 @@ tun:
 proxies:
   - name: 'hysteria'
     type: hysteria2
-    server: xx.xx # 你的vps地址
+    server: xx.xx # 你的vps地址或者绑定该vps IP地址的域名
     port: 443
     up: 50 # 自己测试一下，上传带宽 默认单位mbps
     down: 240 # 下载带宽
