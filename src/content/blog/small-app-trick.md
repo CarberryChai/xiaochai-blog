@@ -21,3 +21,25 @@ eg: 八爷的Opencat App可以这样打开
 ```
 
 ![](/assets/snapshot_opencat.png)
+
+## 2. 读取macOS Applications的应用列表
+
+```swift
+let resourceKeys: [URLResourceKey] = [.isApplicationKey]
+
+func enumerateAppsFolder() -> [(String, NSImage)] {
+    let fm = FileManager.default
+    guard let appsURL = fm.urls(for: .applicationDirectory, in: .localDomainMask).first,
+          let enumerator = fm.enumerator(at: appsURL, includingPropertiesForKeys: resourceKeys, options: .skipsSubdirectoryDescendants)
+    else { return [] }
+
+    return enumerator.reduce(into: []) { apps, fileURL in
+        guard case let fileURL as URL = fileURL, let resourceValues = try? fileURL.resourceValues(forKeys: Set(resourceKeys)), let isApp = resourceValues.isApplication else { return }
+        if isApp {
+            let name = fileURL.deletingPathExtension().lastPathComponent
+            let icon = NSWorkspace.shared.icon(forFile: fileURL.path)
+            apps.append((name, icon))
+        }
+    }
+}
+```
