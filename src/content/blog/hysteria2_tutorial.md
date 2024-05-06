@@ -57,7 +57,7 @@ masquerade:
 EOF
 ```
 
-修改上面脚本，把注释的字段换成你自己的，然后自己执行上述脚本。
+修改上面脚本，把注释的字段换成你自己的，然后执行上述脚本。
 
 ### 查看hysteria状态一键启动服务
 
@@ -81,7 +81,7 @@ systemctl enable hysteria-server.service
 
 ### 1.下载Clash Verge客户端
 
-[下载地址](https://github.com/zzzgydi/clash-verge/releases)
+[下载地址](https://github.com/clash-verge-rev/clash-verge-rev)
 
 ### 2.准备客户端配置文件
 
