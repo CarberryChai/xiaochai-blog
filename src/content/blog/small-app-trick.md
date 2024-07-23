@@ -7,7 +7,7 @@ slug: app-develop-trick
 featured: false
 draft: false
 tags:
-  - App SwiftUI
+  - app swiftui
 description: 一些有用的App开发小技巧，记录一下
 ---
 
